@@ -69,6 +69,10 @@ $radius: 0.35rem;
   appearance: none;
   box-sizing: border-box;
 }
+// *::-webkit-scrollbar {
+//   width: 30px;
+//   background-color: red;
+// }
 img {
   width: 100%;
 }
@@ -150,6 +154,12 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
+}
+.flex-col-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 1rem;
 }
 //header starts here
@@ -428,9 +438,80 @@ header {
     .technical-support {
       .line-chart {
         width: 100%;
-        height: 15rem;
+        height: 20rem;
         margin: 1rem 0;
         background-color: aqua;
+      }
+      .card-bottom {
+        .text-box {
+          h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+        h2 {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+        .progress-bar {
+          position: relative;
+          width: 100%;
+          height: 1rem;
+          border-radius: 5rem;
+          overflow: hidden;
+          background-color: $grey;
+          .progress {
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            border-radius: 5rem;
+            background-color: $primary;
+          }
+        }
+      }
+    }
+    .timeline-example {
+      .card-main {
+        width: 100%;
+        height: 30rem;
+        .timeline {
+          position: relative;
+          margin: 0 2rem;
+          padding: 1rem 2rem;
+          border-left: 5px solid $grey;
+          gap: 2rem;
+          overflow-y: scroll;
+          overflow-x: visible;
+
+          &::-webkit-scrollbar {
+            width: 5px;
+            background-color: transparent;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            border: 3px solid $grey;
+          }
+
+          // scrollbar-width: thin;
+          p {
+            letter-spacing: -0.05rem;
+            text-align: center;
+            font-size: 1.4rem;
+            span:first-child {
+              overflow: visible;
+              position: absolute;
+              left: -8px;
+              width: 1.3rem;
+              height: 1.3rem;
+              border-radius: 50%;
+              background-color: $white;
+              border: 3px solid;
+            }
+            span:last-child {
+              font-weight: 700;
+            }
+          }
+        }
       }
     }
   }
