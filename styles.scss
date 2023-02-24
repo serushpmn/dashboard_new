@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+//values
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+$colors: (
+  "primary": #2955c8,
+  "secondary": #6c757d,
+  "success": #3ac47d,
+  "info": #16aaff,
+  "warning": #f7b924,
+  "danger": #d92550,
+  "focus": #444054,
+  "alt": #794cba,
+  "light": #eeeeee,
+  "dark": #343a40,
+  "white": #fff,
+  "black": #000,
+);
+$white: #fff;
+$black: #000;
+$header: #fafbfc;
+$main: #f1f4f6;
+$title: #555f78;
+$grey: #dedede;
+$grey-text: #a4a8ac;
+$primary: #2955c8;
+$secondary: #6c757d;
+$success: #3ac47d;
+$info: #16aaff;
+$warning: #f7b924;
+$danger: #d92550;
+$focus: #444054;
+$alt: #794cba;
+$light-grey: #eeeeee;
+$dark: #343a40;
+
+@each $val, $key in $colors {
+  .color-#{$val} {
+    color: $key;
+  }
+  .bg-#{$val} {
+    background-color: $key;
+  }
+  .bg-#{$val}-dark {
+    background-color: darken($key, 10%);
+  }
+  .bg-#{$val}-light {
+    background-color: lighten($key, 10%);
+  }
+  .bg-#{$val}-lightest {
+    background-color: lighten($key, 35%);
+  }
+}
+
+$shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+  0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+  0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+  0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+$radius: 0.35rem;
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
+// base
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $main;
+  margin: 0 auto;
+  color: $title;
+}
+button {
+  cursor: pointer;
+  border-radius: $radius;
+  &:hover {
+    // opacity: 0.95;
+  }
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+h5 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.text-muted {
+  color: $grey-text;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flex-col-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+//header starts here
+header {
+  position: fixed;
+  width: 100%;
+  background-color: $header;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow;
+  .header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    .search-bar {
+      margin-left: 2rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      input {
+        position: relative;
+        padding: 2rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: $light-grey;
+        color: $secondary;
+        border-radius: 50%;
+        transition: all 0.6s ease;
+        &::placeholder {
+          color: transparent;
+        }
+        &:focus {
+          width: 20rem;
+          border-radius: 5rem;
+          & + label {
+            right: 0;
+            transform: scaleX(1);
+          }
+          &::placeholder {
+            color: $grey-text;
+          }
+        }
+      }
+      label {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $grey;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        color: $primary;
+        transition: all 0.01s ease;
+        transform: scaleX(-1);
+        span {
+          font-size: 2.5rem;
+          font-weight: 600;
+        }
+      }
+    }
+    .header-left-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      a {
+        display: flex;
+        align-items: center;
+        color: $title;
+        opacity: 0.85;
+        font-weight: 300;
+        font-size: 1.3rem;
+        & span:first-child {
+          color: $primary;
+          font-size: 1.8rem;
+          opacity: 0.7;
+          margin-right: 0.5rem;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    > *:not(:last-child) {
+      border-right: 1px solid $grey;
+    }
+    .header-right_nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      button {
+        opacity: 0.9;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        cursor: pointer;
+        &:last-child {
+          margin-right: 2rem;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        &:focus {
+          filter: brightness(90%);
+        }
+        span {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+      span {
+        font-size: 2rem;
+        opacity: 0.5;
+        margin-right: 2rem;
+      }
+    }
+    .menu {
+      a {
+        color: $title;
+        opacity: 1;
+        span {
+          font-size: 3rem;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+.container {
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+
+.analytics-dash {
+  width: 100%;
+  padding: 8rem 0 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: aqua;
+      width: 6rem;
+      height: 6rem;
+      background-color: $white;
+      border-radius: $radius;
+      box-shadow: $shadow;
+    }
+    .text-box {
+      display: flex;
+      gap: 0.8rem;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .right-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    button {
+      padding: 1rem 1.5rem;
+      border-radius: $radius;
+      box-shadow: $shadow;
+      color: $white;
+      text-align: center;
+      > * {
+        font-size: 1.4rem;
+        color: $white;
+      }
+    }
+  }
+}
+
+.cards {
+  width: 100%;
+  //   background-color: aqua;
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    gap: 2rem;
+
+    .card {
+      background-color: $white;
+      box-shadow: $shadow;
+      border-radius: $radius;
+      width: 100%;
+      padding: 1rem;
+      > *:not(:last-child) {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $grey;
+      }
+      .card-top {
+        margin: 0 1rem;
+        button {
+          padding: 1rem 2rem;
+          border: 1px solid $black;
+          &:hover {
+            background-color: $dark;
+            color: $white;
+          }
+        }
+      }
+      .card-main {
+        .performance {
+          padding: 1rem 0;
+          flex-grow: 1;
+          gap: 2rem;
+          > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+          }
+          .text-box {
+            line-height: 2.5rem;
+            h2 {
+              font-size: 4rem;
+              font-weight: 700;
+            }
+            p {
+              gap: 0.2rem;
+            }
+          }
+        }
+      }
+
+      .card-bottom {
+        padding: 1rem 0;
+        button {
+          padding: 1.5rem 3.5rem;
+          border-radius: 5rem;
+          &:hover {
+            box-shadow: $shadow;
+          }
+        }
+      }
+    }
+    .technical-support {
+      .line-chart {
+        width: 100%;
+        height: 15rem;
+        margin: 1rem 0;
+        background-color: aqua;
+      }
+    }
+  }
+}
