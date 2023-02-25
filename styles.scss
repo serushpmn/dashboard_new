@@ -89,7 +89,6 @@ body {
 }
 button {
   cursor: pointer;
-  border-radius: $radius;
   &:hover {
     // opacity: 0.95;
   }
@@ -132,6 +131,13 @@ p {
 .flex-start {
   display: flex;
   justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
   align-content: center;
   align-items: center;
   gap: 1rem;
@@ -386,44 +392,44 @@ header {
         padding-bottom: 1.5rem;
         border-bottom: 1px solid $grey;
       }
-      .card-top {
-        margin: 0 1rem;
-        button {
-          padding: 1rem 2rem;
-          border: 1px solid $black;
-          &:hover {
-            background-color: $dark;
-            color: $white;
-          }
+    }
+  }
+  .portfolio-performance {
+    .card-top {
+      margin: 0 1rem;
+      button {
+        padding: 1rem 2rem;
+        border: 1px solid $black;
+        &:hover {
+          background-color: $dark;
+          color: $white;
         }
       }
-      .card-main {
-        .performance {
-          padding: 1rem 0;
-          flex-grow: 1;
-          gap: 2rem;
-          > span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3rem;
-            width: 5rem;
-            height: 5rem;
-            border-radius: 50%;
-          }
-          .text-box {
-            line-height: 2.5rem;
-            h2 {
-              font-size: 4rem;
-              font-weight: 700;
-            }
-            p {
-              gap: 0.2rem;
-            }
-          }
-        }
+    }
+    .performance {
+      padding: 1rem 0;
+      flex-grow: 1;
+      gap: 2rem;
+      > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
       }
 
+      .text-box {
+        line-height: 2.5rem;
+        h2 {
+          font-size: 4rem;
+          font-weight: 700;
+        }
+        p {
+          gap: 0.2rem;
+        }
+      }
       .card-bottom {
         padding: 1rem 0;
         button {
@@ -435,82 +441,202 @@ header {
         }
       }
     }
-    .technical-support {
-      .line-chart {
-        width: 100%;
-        height: 20rem;
-        margin: 1rem 0;
-        background-color: aqua;
+  }
+  .technical-support {
+    .line-chart {
+      width: 100%;
+      height: 20rem;
+      margin: 1rem 0;
+      background-color: aqua;
+    }
+    .card-bottom {
+      .text-box {
+        h3 {
+          font-size: 1.6rem;
+          margin-bottom: 0.5rem;
+        }
       }
-      .card-bottom {
-        .text-box {
-          h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-          }
-        }
-        h2 {
-          font-size: 3rem;
-          font-weight: 700;
-        }
-        .progress-bar {
-          position: relative;
-          width: 100%;
-          height: 1rem;
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .progress-bar {
+        position: relative;
+        width: 100%;
+        height: 1rem;
+        border-radius: 5rem;
+        overflow: hidden;
+        background-color: $grey;
+        .progress {
+          position: absolute;
+          width: 45%;
+          height: 100%;
           border-radius: 5rem;
-          overflow: hidden;
-          background-color: $grey;
-          .progress {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  .timeline-example {
+    .card-main {
+      width: 100%;
+      height: 30rem;
+      .timeline {
+        position: relative;
+        margin: 0 2rem;
+        padding: 1rem 2rem;
+        border-left: 5px solid $grey;
+        gap: 2rem;
+        overflow-y: scroll;
+        overflow-x: visible;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 20px;
+          border: 3px solid $grey;
+        }
+
+        // scrollbar-width: thin;
+        p {
+          letter-spacing: -0.05rem;
+          text-align: center;
+          font-size: 1.4rem;
+          span:first-child {
+            overflow: visible;
             position: absolute;
-            width: 45%;
-            height: 100%;
-            border-radius: 5rem;
-            background-color: $primary;
+            left: -8px;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            background-color: $white;
+            border: 3px solid;
+          }
+          span:last-child {
+            font-weight: 700;
           }
         }
       }
     }
-    .timeline-example {
-      .card-main {
-        width: 100%;
-        height: 30rem;
-        .timeline {
-          position: relative;
-          margin: 0 2rem;
-          padding: 1rem 2rem;
-          border-left: 5px solid $grey;
-          gap: 2rem;
-          overflow-y: scroll;
-          overflow-x: visible;
+  }
+  .sales-chart {
+    // margin-bottom: 3rem;
+    border-bottom: 0.5rem solid;
+    width: 100%;
+    // height: 25rem;
+    // background-color: #16aaff;
+    // overflow: hidden;
+    .text-box {
+      padding: 3rem;
+      h2 {
+        color: $title;
+        font-size: 2.8rem;
+        font-weight: 500;
+        span {
+          font-size: 2.2rem;
+          font-weight: 400;
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .dynamic-table {
+    .buttons {
+      gap: 0;
+      & > * {
+        color: $white;
+        border: none !important;
+        border-radius: none !important;
+        &:hover {
+          background-color: #484848;
+        }
+      }
+      & button:first-child {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+      }
+      & button:last-child {
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+      }
+    }
+    .search-text {
+      padding: 1rem 0;
+      label {
+        font-size: 1.6rem;
+      }
+      input {
+        padding: 1rem;
+        width: 20rem;
+        height: 4rem;
+        border-radius: $radius;
+        outline: 1px solid $grey;
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+        }
+      }
+    }
+    table {
+      width: 100%;
+      text-align: left;
+      padding: 2rem;
+      border-collapse: collapse;
 
-          &::-webkit-scrollbar {
-            width: 5px;
-            background-color: transparent;
-          }
-          &::-webkit-scrollbar-thumb {
-            border-radius: 20px;
-            border: 3px solid $grey;
-          }
+      th,
+      td {
+        font-size: 1.4rem;
+        padding: 1rem;
+        border-bottom: 1px solid $grey;
+      }
+      tr:nth-child(even) {
+        background-color: $light-grey;
+      }
+      tr > th:first-child,
+      td:first-child {
+        width: 10rem;
+        text-align: center;
+        font-weight: 800;
+      }
+    }
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .pagination {
+        padding: 1rem;
+        gap: 0;
+        button {
+          border: 1px solid $grey;
+          text-align: center;
+          padding: 1rem;
+          font-size: 1.2rem;
+          margin: 0;
+          border: 1px solid $grey;
+          transition: all 0.3s ease;
 
-          // scrollbar-width: thin;
-          p {
-            letter-spacing: -0.05rem;
-            text-align: center;
-            font-size: 1.4rem;
-            span:first-child {
-              overflow: visible;
-              position: absolute;
-              left: -8px;
-              width: 1.3rem;
-              height: 1.3rem;
-              border-radius: 50%;
-              background-color: $white;
-              border: 3px solid;
-            }
-            span:last-child {
-              font-weight: 700;
-            }
+          &:hover {
+            background-color: $grey;
           }
+        }
+        .active {
+          background-color: $primary;
+          color: $white;
+          border: 1px solid $primary;
+          &:hover {
+            background-color: $primary;
+          }
+        }
+      }
+      button {
+        padding: 1rem 2rem;
+        border: 1px solid $grey;
+        border-radius: $radius;
+        &:active {
+          box-shadow: $shadow;
         }
       }
     }
