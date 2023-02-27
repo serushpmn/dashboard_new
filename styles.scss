@@ -85,7 +85,6 @@ body {
   background-color: $main;
   margin: 0 auto;
   color: $title;
-  padding-bottom: 10rem;
 }
 button {
   cursor: pointer;
@@ -384,7 +383,7 @@ header {
   //   background-color: aqua;
   .row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
     width: 100%;
     gap: 2rem;
@@ -743,9 +742,164 @@ header {
       }
     }
   }
+  .chatbox {
+    .chat-screen {
+      height: 40rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        border: 3px solid $grey;
+      }
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: $radius;
+      }
+    }
+    .receive-text {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+      .message-box {
+        p.message {
+          padding: 1rem 2rem;
+          background-color: #e0f3ff;
+          border-radius: 2.5rem;
+          border-top-left-radius: 0;
+        }
+        .message-date {
+          gap: 0.5rem;
+          padding: 0 1rem;
+          span {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .send-text {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+      .message-box {
+        p.message {
+          padding: 1rem 2rem;
+          background-color: #e0f3ff;
+          border-radius: 2.5rem;
+          border-top-right-radius: 0;
+        }
+        .message-date {
+          gap: 0.5rem;
+          padding: 0 1rem;
+          span {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .card-bottom {
+      padding: 0 1rem;
+      input {
+        color: $dark;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        height: 3rem;
+        border: 1px solid $grey;
+        border-radius: $radius;
+        &::placeholder {
+          font-size: 1.3rem;
+        }
+        &:focus {
+          border-color: #a9bcee;
+          outline: 0;
+          box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+        }
+      }
+    }
+  }
+  .total-view {
+    .total-each {
+      flex-grow: 1;
+      min-width: 30%;
+      .text-box {
+        h3 {
+          font-weight: 600;
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+    }
+  }
 }
-
-//responsive Media Query
+footer {
+  background-color: $header;
+  padding: 1rem;
+  .left-footer {
+    > *:not(:last-child) {
+      border-right: 1px solid $grey;
+    }
+    gap: 0;
+    span {
+      font-size: 3rem;
+      padding: 1rem;
+      background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      &:hover {
+        filter: brightness(105%);
+      }
+    }
+  }
+  .right-footer {
+    a {
+      display: flex;
+      align-items: center;
+      color: $title;
+      opacity: 0.85;
+      font-weight: 300;
+      font-size: 1.3rem;
+      & span:first-child {
+        color: $primary;
+        font-size: 1.8rem;
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+//....responsive Media Query.....//
+//.......................//
 @media screen and (max-width: 576px) {
   header {
     display: flex;
@@ -795,6 +949,16 @@ header {
     }
     .row-4 {
       flex-direction: column;
+    }
+    .total-view {
+      .first,
+      .second {
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: stretch;
+        .total-each {
+        }
+      }
     }
   }
 }

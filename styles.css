@@ -266,7 +266,6 @@ body {
   background-color: #f1f4f6;
   margin: 0 auto;
   color: #555f78;
-  padding-bottom: 10rem;
 }
 
 button {
@@ -578,7 +577,7 @@ header .header-right .menu a:hover {
 }
 .cards .row {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
   width: 100%;
   gap: 2rem;
@@ -908,6 +907,153 @@ header .header-right .menu a:hover {
 .cards .task-list .card-bottom button:hover {
   filter: brightness(90%);
 }
+.cards .chatbox .chat-screen {
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  overflow-y: scroll;
+}
+.cards .chatbox .chat-screen::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.cards .chatbox .chat-screen::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 3px solid #dedede;
+}
+.cards .chatbox .profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.cards .chatbox .profile img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.35rem;
+}
+.cards .chatbox .receive-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.cards .chatbox .receive-text .message-box p.message {
+  padding: 1rem 2rem;
+  background-color: #e0f3ff;
+  border-radius: 2.5rem;
+  border-top-left-radius: 0;
+}
+.cards .chatbox .receive-text .message-box .message-date {
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+.cards .chatbox .receive-text .message-box .message-date span {
+  font-size: 1rem;
+}
+.cards .chatbox .receive-text .message-box .message-date p {
+  font-size: 1rem;
+}
+.cards .chatbox .send-text {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.cards .chatbox .send-text .message-box p.message {
+  padding: 1rem 2rem;
+  background-color: #e0f3ff;
+  border-radius: 2.5rem;
+  border-top-right-radius: 0;
+}
+.cards .chatbox .send-text .message-box .message-date {
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+.cards .chatbox .send-text .message-box .message-date span {
+  font-size: 1rem;
+}
+.cards .chatbox .send-text .message-box .message-date p {
+  font-size: 1rem;
+}
+.cards .chatbox .card-bottom {
+  padding: 0 1rem;
+}
+.cards .chatbox .card-bottom input {
+  color: #343a40;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #dedede;
+  border-radius: 0.35rem;
+}
+.cards .chatbox .card-bottom input::-moz-placeholder {
+  font-size: 1.3rem;
+}
+.cards .chatbox .card-bottom input::placeholder {
+  font-size: 1.3rem;
+}
+.cards .chatbox .card-bottom input:focus {
+  border-color: #a9bcee;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.cards .total-view .total-each {
+  flex-grow: 1;
+  min-width: 30%;
+}
+.cards .total-view .total-each .text-box h3 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.cards .total-view .total-each .text-box p {
+  font-size: 1.4rem;
+}
+.cards .total-view .total-each h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+footer {
+  background-color: #fafbfc;
+  padding: 1rem;
+}
+footer .left-footer {
+  gap: 0;
+}
+footer .left-footer > *:not(:last-child) {
+  border-right: 1px solid #dedede;
+}
+footer .left-footer span {
+  font-size: 3rem;
+  padding: 1rem;
+  background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .left-footer span:hover {
+  filter: brightness(105%);
+}
+footer .right-footer a {
+  display: flex;
+  align-items: center;
+  color: #555f78;
+  opacity: 0.85;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+footer .right-footer a span:first-child {
+  color: #2955c8;
+  font-size: 1.8rem;
+  opacity: 0.7;
+  margin-right: 0.5rem;
+}
+footer .right-footer a:hover {
+  opacity: 1;
+}
 
 @media screen and (max-width: 576px) {
   header {
@@ -952,5 +1098,11 @@ header .header-right .menu a:hover {
   }
   .cards .row-4 {
     flex-direction: column;
+  }
+  .cards .total-view .first,
+  .cards .total-view .second {
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: stretch;
   }
 }/*# sourceMappingURL=styles.css.map */
