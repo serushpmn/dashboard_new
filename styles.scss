@@ -181,7 +181,7 @@ header {
   justify-content: space-between;
   align-items: center;
   box-shadow: $shadow;
-  img {
+  > img {
     display: none;
   }
   .header-left {
@@ -700,6 +700,7 @@ header {
     }
     .task {
       flex-grow: 1;
+
       border-bottom: 1px solid $grey;
       padding: 1rem 0;
       &:hover .right {
@@ -842,7 +843,6 @@ header {
   .total-view {
     .total-each {
       flex-grow: 1;
-      min-width: 30%;
       .text-box {
         h3 {
           font-weight: 600;

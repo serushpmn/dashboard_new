@@ -373,7 +373,7 @@ header {
   align-items: center;
   box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
 }
-header img {
+header > img {
   display: none;
 }
 header .header-left {
@@ -1003,7 +1003,6 @@ header .header-right .menu a:hover {
 }
 .cards .total-view .total-each {
   flex-grow: 1;
-  min-width: 30%;
 }
 .cards .total-view .total-each .text-box h3 {
   font-weight: 600;
