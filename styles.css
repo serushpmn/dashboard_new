@@ -1484,16 +1484,31 @@ footer .right-footer a:hover {
 
 .side-bar .main-nav ul.menu a.links {
   gap: 1rem;
+  font-weight: 500;
 }
 
 .side-bar .main-nav ul.menu ul.sub-menu {
-  display: none;
+  max-height: 0;
+  overflow-y: hidden;
+  padding: 1rem 0 0 3rem;
+  margin-left: 2rem;
+  border-left: 3px solid transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .side-bar .main-nav ul.menu ul.sub-menu.active {
   padding: 1rem 0 1rem 3rem;
   border-left: 3px solid #e0f3ff;
   margin-left: 2rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.side-bar .main-nav ul.menu ul.sub-menu.active a.active-link {
+  color: #2955c8;
+  font-weight: 700;
+  background-color: #e0f3ff;
 }
 
 @media screen and (max-width: 576px) {
