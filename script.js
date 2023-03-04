@@ -1,4 +1,5 @@
 const links = document.querySelectorAll(".links");
+const expandArrow = document.querySelectorAll(".expand");
 links.forEach((link) => {
   link.addEventListener("click", () => {
     console.log("clicked");
