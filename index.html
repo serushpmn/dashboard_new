@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- header starts here  -->
-    <header>
+    <header id="header">
       <img src="img/logo-inverse.png" />
       <div class="header-left">
         <div class="search-bar">
@@ -70,6 +70,10 @@
       </div>
     </header>
     <div class="side-bar">
+      <div class="logo-box flex-between">
+        <img src="img/logo-inverse.png" alt="logo">
+        <span class="material-symbols-rounded close-menu"> menu </span>
+      </div>
       <div class="main-nav">
         <h3>main navigation</h3>
         <ul class="menu">
@@ -201,7 +205,7 @@
         </ul>
       </div>
     </div>
-    <main>
+    <main id="main">
       <div class="container">
         <div class="analytics-dash">
           <div class="left-side">
@@ -763,10 +767,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="card total-view">
+            <div class="card flex-col-start total-view">
               <div class="first flex-start">
                 <div class="total-each flex-between">
-                  <div class="text-box flex-col-center">
+                  <div class="text-box flex-col-center no-gap">
                       <h3>Total Orders</h3>
                       <p class="text-muted">Last year expenses</p>
                   </div>
@@ -777,7 +781,7 @@
                 <div class="total-each flex-between">
                   <div class="text-box flex-col-center">
                       <h3>Followers</h3>
-                      <p class="text-muted">Last year expenses</p>
+                      <p class="text-muted">People Interested</p>
                   </div>
                   <h2 class="color-danger">
                     45,9%
@@ -807,7 +811,7 @@
                 <div class="total-each flex-between">
                   <div class="text-box flex-col-center">
                       <h3>Product Sold</h3>
-                      <p class="text-muted">Last year expenses</p>
+                      <p class="text-muted">Total revenue streams</p>
                   </div>
                   <h2 class="color-warning">
                     $3M
@@ -816,7 +820,7 @@
                 <div class="total-each flex-between">
                   <div class="text-box flex-col-center">
                       <h3>Clients</h3>
-                      <p class="text-muted">Last year expenses</p>
+                      <p class="text-muted">Total Clients Profit</p>
                   </div>
                   <h2 class="color-primary">
                     $ 12.6K

@@ -92,6 +92,10 @@ button {
   &:hover {
     // opacity: 0.95;
   }
+  &:active {
+    transform: scale(0.985);
+    box-shadow: $shadow;
+  }
 }
 h1 {
   font-size: 2rem;
@@ -127,6 +131,7 @@ p {
   align-content: center;
   align-items: center;
   gap: 1rem;
+  flex-basis: 0;
 }
 .flex-start {
   display: flex;
@@ -168,6 +173,9 @@ p {
   justify-content: flex-start;
   gap: 1rem;
 }
+.basis-0 {
+  flex-basis: 0;
+}
 .no-gap {
   gap: 0;
 }
@@ -175,13 +183,15 @@ p {
 header {
   position: fixed;
   z-index: 99;
-  width: 100%;
+  width: calc(100% - 28rem);
+  right: 0;
   background-color: $header;
   padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: $shadow;
+  transition: width 0.5s ease;
   > img {
     display: none;
   }
@@ -204,13 +214,15 @@ header {
         background-color: $light-grey;
         color: $secondary;
         border-radius: 50%;
-        transition: all 0.6s ease;
+        transition: all 0.5s ease;
+        opacity: 0;
         &::placeholder {
           color: transparent;
         }
         &:focus {
           width: 20rem;
           border-radius: 5rem;
+          opacity: 1;
           & + label {
             right: 0;
             transform: scaleX(1);
@@ -328,6 +340,7 @@ header {
 main {
   width: calc(100% - 28rem);
   margin-left: auto;
+  transition: width 0.5s ease;
 }
 .container {
   padding: 0 3rem;
@@ -493,23 +506,23 @@ main {
     .card-main {
       width: 100%;
       height: 30rem;
+      overflow-x: visible;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        border: 3px solid $grey;
+      }
       .timeline {
         position: relative;
         margin: 0 2rem;
         padding: 1rem 2rem;
         border-left: 5px solid $grey;
         gap: 2rem;
-        overflow-y: scroll;
-        overflow-x: visible;
-
-        &::-webkit-scrollbar {
-          width: 5px;
-          background-color: transparent;
-        }
-        &::-webkit-scrollbar-thumb {
-          border-radius: 20px;
-          border: 3px solid $grey;
-        }
 
         // scrollbar-width: thin;
         p {
@@ -666,6 +679,12 @@ main {
     }
   }
   .task-list {
+    .card-main {
+      > *:not(:last-child) {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $grey;
+      }
+    }
     .left {
       position: relative;
       .indicator {
@@ -706,8 +725,6 @@ main {
     .task {
       flex-grow: 1;
 
-      border-bottom: 1px solid $grey;
-      padding: 1rem 0;
       &:hover .right {
         visibility: visible;
       }
@@ -846,9 +863,16 @@ main {
     }
   }
   .total-view {
+    // .first,
+    // .second {
+    //   flex: 1;
+    // }
     .total-each {
       flex-grow: 1;
+      padding: 0 1.5rem;
+
       .text-box {
+        gap: 0;
         h3 {
           font-weight: 600;
           font-size: 1.6rem;
@@ -863,6 +887,9 @@ main {
       }
     }
   }
+}
+.basis-0 {
+  flex-basis: 0;
 }
 footer {
   background-color: $header;
@@ -909,15 +936,32 @@ footer {
   background-color: $white;
   width: 28rem;
   height: 100%;
-  padding: 8rem 1rem 1rem 1rem;
+  z-index: 100;
+  // padding: 1rem;
   position: fixed;
-
+  transition: width 0.5s ease;
+  .logo-box {
+    padding: 1rem;
+    height: 6rem;
+    box-shadow: $shadow;
+    // padding: 0 1rem;
+    img {
+      width: 10rem;
+    }
+    .close-menu {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   .main-nav {
     // background-color: #a2d8f799;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
     h3 {
       color: $primary;
       font-weight: 700;
@@ -985,6 +1029,24 @@ footer {
           background-color: #e0f3ff;
         }
       }
+    }
+  }
+}
+.side-bar.closed {
+  width: 4rem;
+
+  .logo-box {
+    img {
+      display: none;
+    }
+    // display: none;
+  }
+  .main-nav {
+    h3 {
+      display: none;
+    }
+    li {
+      display: none;
     }
   }
 }
