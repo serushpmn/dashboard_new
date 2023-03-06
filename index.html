@@ -15,6 +15,9 @@
   <body>
     <!-- header starts here  -->
     <header id="header">
+      <span class="material-symbols-rounded close-menu-mobile">
+        menu
+      </span>
       <img src="img/logo-inverse.png" />
       <div class="header-left">
         <div class="search-bar">
@@ -72,77 +75,54 @@
     <div class="side-bar">
       <div class="logo-box flex-between">
         <img src="img/logo-inverse.png" alt="logo">
+      
         <span class="material-symbols-rounded close-menu"> menu </span>
       </div>
-      <div class="main-nav">
-        <h3>main navigation</h3>
-        <ul class="menu">
-          <li>
-            <a href="#" class="links"
-              ><span class="material-symbols-rounded"> rocket </span>
-              Dashboards<span class="material-symbols-rounded">
-                expand_more
-              </span>
-            </a>
+      <nav id="side-nav">
+        <div class="side-nav main-nav flex-col-start">
+          <h3>main navigation</h3>
+          <ul class="menu flex-col-between">
+                   <li class="top-links">
+                    <div class="links">
+                      <span class="material-symbols-rounded"> diamond </span>
+                      <a href="#">Elements</a>
+                      <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                  <ul class="submenu">
+                    <li> <a href="#">submenu1</a></li>
+                    <li> <a href="#">submenu2</a></li>
+                    <li> <a href="#">submenu3</a></li>
+                  </ul> 
+                  </li> 
+                  <li class="top-links">
+                    <div class="links">
+                      <span class="material-symbols-rounded"> diamond </span>
+                      <a href="#">Elements</a>
+                      <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                  <ul class="submenu">
+                    <li> <a href="#">submenu1</a></li>
+                    <li> <a href="#">submenu2</a></li>
+                    <li> <a href="#">submenu3</a></li>
+                  </ul> 
+                  </li>
+                  <li class="top-links">
+                    <div class="links">
+                      <span class="material-symbols-rounded"> diamond </span>
+                      <a href="#">Elements</a>
+                      <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                  <ul class="submenu">
+                    <li> <a href="#">submenu1</a></li>
+                    <li> <a href="#">submenu2</a></li>
+                    <li> <a href="#">submenu3</a></li>
+                  </ul> 
+                  </li> 
+          </ul>
+        </div>
 
-            <ul class="sub-menu">
-              <li class="sub-links">
-                <a href="#" class="active-link"> Analytics</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Advertisemnet</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Managemnt</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="links"
-              ><span class="material-symbols-rounded"> article </span>
-              Pages<span class="material-symbols-rounded"> expand_more </span>
-            </a>
-
-            <ul class="sub-menu">
-              <li class="sub-links">
-                <a href="#"> Analytics</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Advertisemnet</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Managemnt</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Advertisemnet</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Managemnt</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="links"
-              ><span class="material-symbols-rounded"> redeem </span>
-              Applications<span class="material-symbols-rounded">
-                expand_more
-              </span>
-            </a>
-            <ul class="sub-menu">
-              <li class="sub-links">
-                <a href="#"> Analytics</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Advertisemnet</a>
-              </li>
-              <li class="sub-links">
-                <a href="#"> Managemnt</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="main-nav">
+      </nav>
+      <!-- <div class="main-nav">
         <h3>BOOTSTRAP COMPONENTS</h3>
         <ul class="menu">
           <li>
@@ -203,7 +183,7 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <main id="main">
       <div class="container">
@@ -391,42 +371,48 @@
             </div>
           </div>
           <div class="row row-4">
-            <div class="card sales-chart flex-col-center color-success">
-              <div class="flex-col-center text-title">
-                <div class="text-box">
-                  <h2><span class="text-muted">$</span>874</h2>
-                  <p class="text-muted">sales last month</p>
+            <div class="row">
+              <div class="card sales-chart flex-col-center color-success">
+                <div class="flex-col-center text-title">
+                  <div class="text-box">
+                    <h2><span class="text-muted">$</span>874</h2>
+                    <p class="text-muted">sales last month</p>
+                  </div>
+                  <img src="img/chart-1.PNG" />
                 </div>
-                <img src="img/chart-1.PNG" />
+              </div>
+              <div class="card sales-chart flex-col-center color-primary">
+                <div class="flex-col-center text-title">
+                  <div class="text-box">
+                    <h2><span class="text-muted">$</span>874</h2>
+                    <p class="text-muted">sales last month</p>
+                  </div>
+                  <img src="img/chart-2.PNG" />
+                </div>
               </div>
             </div>
-            <div class="card sales-chart flex-col-center color-primary">
-              <div class="flex-col-center text-title">
-                <div class="text-box">
-                  <h2><span class="text-muted">$</span>874</h2>
-                  <p class="text-muted">sales last month</p>
-                </div>
-                <img src="img/chart-2.PNG" />
-              </div>
-            </div>
-            <div class="card sales-chart flex-col-center color-warning">
-              <div class="flex-col-center text-title">
-                <div class="text-box">
-                  <h2><span class="text-muted">$</span>874</h2>
-                  <p class="text-muted">sales last month</p>
-                </div>
-                <img src="img/chart-3.PNG" />
-              </div>
-            </div>
-            <div class="card sales-chart flex-col-center color-danger">
-              <div class="flex-col-between text-title">
-                <div class="text-box">
-                  <h2><span class="text-muted">$</span>874</h2>
-                  <p class="text-muted">sales last month</p>
-                </div>
-                <img src="img/chart-4.PNG" />
-              </div>
-            </div>
+<div class="row">
+
+  <div class="card sales-chart flex-col-center color-warning">
+    <div class="flex-col-center text-title">
+      <div class="text-box">
+        <h2><span class="text-muted">$</span>874</h2>
+        <p class="text-muted">sales last month</p>
+      </div>
+      <img src="img/chart-3.PNG" />
+    </div>
+  </div>
+  <div class="card sales-chart flex-col-center color-danger">
+    <div class="flex-col-between text-title">
+      <div class="text-box">
+        <h2><span class="text-muted">$</span>874</h2>
+        <p class="text-muted">sales last month</p>
+      </div>
+      <img src="img/chart-4.PNG" />
+    </div>
+  </div>
+</div>
+            
           </div>
           <div class="row">
             <div class="card dynamic-table">
