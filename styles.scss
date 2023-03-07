@@ -1040,11 +1040,12 @@ footer {
     .main-nav {
       h3 {
         opacity: 0;
-        display: none;
+        left: -30px;
+        visibility: hidden;
       }
 
       .links {
-        padding: 1rem;
+        padding: 0.5rem;
         span:not(:first-child),
         a {
           opacity: 0;
@@ -1159,6 +1160,55 @@ footer {
         .total-each {
         }
       }
+    }
+  }
+}
+
+// ========= MODAL Buttons starts here ======
+.header-right {
+  position: relative;
+}
+.modal-content {
+  display: none;
+}
+.modal-content.show {
+  display: block;
+  position: absolute;
+  background-color: $warning;
+  top: 100%;
+  left: -173px;
+  width: 40rem;
+  margin: 0 auto;
+  // padding: 2rem;
+}
+.grid-dashboard-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .grid-dash-top {
+    width: 100%;
+    text-align: center;
+    background-color: $alt;
+    color: $white;
+    padding: 1rem;
+  }
+  .grid-dash-middle {
+    background-color: #3ac47d;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    span {
+      border: 1px solid $grey;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+  .grid-dash-bottom {
+    padding: 1rem;
+    button {
+      padding: 1rem 2rem;
+      border-radius: 1rem;
     }
   }
 }

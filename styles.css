@@ -1175,10 +1175,11 @@ footer .right-footer a:hover {
   }
   .side-bar.closed .main-nav h3 {
     opacity: 0;
-    display: none;
+    left: -30px;
+    visibility: hidden;
   }
   .side-bar.closed .main-nav .links {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .side-bar.closed .main-nav .links span:not(:first-child),
   .side-bar.closed .main-nav .links a {
@@ -1278,4 +1279,53 @@ footer .right-footer a:hover {
     flex-grow: 1;
     align-items: stretch;
   }
+}
+.header-right {
+  position: relative;
+}
+
+.modal-content {
+  display: none;
+}
+
+.modal-content.show {
+  display: block;
+  position: absolute;
+  background-color: #f7b924;
+  top: 100%;
+  left: -173px;
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.grid-dashboard-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.grid-dashboard-modal .grid-dash-top {
+  width: 100%;
+  text-align: center;
+  background-color: #794cba;
+  color: #fff;
+  padding: 1rem;
+}
+.grid-dashboard-modal .grid-dash-middle {
+  background-color: #3ac47d;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-dashboard-modal .grid-dash-middle span {
+  border: 1px solid #dedede;
+  padding: 2rem;
+  text-align: center;
+}
+.grid-dashboard-modal .grid-dash-bottom {
+  padding: 1rem;
+}
+.grid-dashboard-modal .grid-dash-bottom button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=styles.css.map */

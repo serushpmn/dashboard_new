@@ -43,16 +43,16 @@ closeMenu.addEventListener("click", () => {
 closeMenuMobile.addEventListener("click", () => {
   if (sideBar.classList.contains("closed")) {
     sideBar.classList.remove("closed");
-    // document.getElementById("main").style.width = "100%";
-    // document.getElementById("header").style.width = "100%";
   } else {
-    // document.getElementById("main").style.width = "calc(100% - 8rem)";
-    // document.getElementById("header").style.width = "calc(100% - 8rem)";
     sideBar.classList.add("closed");
   }
-
-  // document.getElementById("main").style.width = "calc(100% - 4rem)";
   console.log("close mobile button clicked");
 });
 
-// .console.log(closeMenu.addEventListener("mouseOver"));
+//========== MODAL ==========//
+let modal_content = document.querySelector(".modal-content");
+const dropdown_grid = document.querySelector(".grid-dashboard");
+dropdown_grid.addEventListener("click", function () {
+  modal_content.classList.toggle("show");
+  console.log("button clicked");
+});
